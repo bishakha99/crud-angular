@@ -1,0 +1,71 @@
+<div class="p-8 mt-4 flex justify-center">
+    <div class="shadow p-3 custom-box">
+        @if(isEdit){
+        <h4>Edit Branches Details</h4>
+        }@else{
+        <h4>Create Branches form</h4>
+        }
+
+        <form [formGroup]="branchesFrom" (ngSubmit)="save()">
+            <div class="w-full flex flex-wrap row">
+                <div class="col-6 mr-4">
+                    <mat-form-field>
+                        <mat-label>Bank</mat-label>
+                        <mat-select formControlName="bank_id">
+                            <mat-option *ngFor="let bank of banks" [value]="bank.id">{{bank.name}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-6">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Ref Code</mat-label>
+                        <input type="text" matInput placeholder="Enter Ref Code" formControlName="ref_code">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="w-full flex flex-wrap row">
+                <div class="col-6 mr-4">
+                    <mat-form-field class="">
+                        <mat-label>Name</mat-label>
+                        <input type="text" matInput placeholder="Enter Name" formControlName="name">
+                    </mat-form-field>
+                </div>
+                
+            
+                <div class="col-6">
+                    <mat-form-field class="">
+                        <mat-label>IFSC</mat-label>
+                        <input type="text" matInput placeholder="Enter IFSC" formControlName="ifsc">
+                    </mat-form-field>
+                </div>
+            </div>
+          
+            <div class="w-full flex flex-wrap justify-center">
+                <div class="col-6  mr-4">
+                    <mat-form-field class="">
+                        <mat-label>Short_name</mat-label>
+                        <input type="text" matInput placeholder="Enter Short_Name" formControlName="short_name">
+                    </mat-form-field>
+                </div>
+                <mat-form-field class="">
+                    <mat-label>Address</mat-label>
+                    <input type="text" matInput placeholder="Enter address" formControlName="address">
+                </mat-form-field>
+            </div>
+            <div class="flex justify-center ">
+                @if(isEdit)
+                {
+                  <button mat-raised-button color="primary w-full" class="mr-2">Update</button>
+                  <button mat-raised-button color="warn w-full" (click)="cancel()">Cancel</button>
+  
+                }
+                @else{
+                <button mat-raised-button color="primary w-full" class="mr-2">Add</button>
+                <button mat-raised-button color="warn w-full" (click)="cancel()">Cancel</button>
+  
+                }
+                </div>
+  
+                </form>
+    </div>
+</div>

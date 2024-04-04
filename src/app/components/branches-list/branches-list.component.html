@@ -1,0 +1,74 @@
+<div class="flex justify-end create">
+
+    <mat-form-field>
+        <mat-label><mat-icon color="">search</mat-icon> Search</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="search..." #input>
+    </mat-form-field>
+  <div class="flex justify-end p-4"><button routerLink="/create-branches" mat-raised-button  style="margin-right: 10px;">Add Branches</button></div>
+  <div class="flex justify-end p-4"><button  mat-raised-button  style="margin-right: 10px;" (click)="exportToExcel()">Export to Excel</button></div>
+  <div class="flex justify-end p-4"><button  mat-raised-button  style="margin-right: 10px;" (click)="makePDF()">Export to PDF</button></div>
+
+    <!-- <button routerLink="/create-branches" mat-raised-button color="primary" class="py-4">Add
+        Branch</button> -->
+</div>
+<div class="grid justify-center">
+<div class="mat-elevation-z8 w-full custom-box">
+
+    <table mat-table [dataSource]="dataSource" class="" matSort id="table-data">
+
+
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-cell"> Id </th>
+            <td mat-cell *matCellDef="let element" class="row-cell"> {{element.id}} </td>
+        </ng-container>
+        <ng-container matColumnDef="ref_code">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-cell"> Ref Code </th>
+            <td mat-cell *matCellDef="let element" class="row-cell"> {{element.ref_code}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-cell"> Name </th>
+            <td mat-cell *matCellDef="let element" class="row-cell"> {{element.name}} </td>
+        </ng-container>
+        <ng-container matColumnDef="short_name" >
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-cell">Short Name</th>
+            <td mat-cell *matCellDef="let element" class="row-cell"> {{element.short_name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="bank_id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-cell">Bank Name</th>
+            <td mat-cell *matCellDef="let element" class="row-cell"> {{element.bank_id}} </td>
+        </ng-container>
+        <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-cell">Address</th>
+            <td mat-cell *matCellDef="let element" class="row-cell"> {{element.address}} </td>
+        </ng-container>
+        <ng-container matColumnDef="ifsc">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-cell"> IFSC </th>
+            <td mat-cell *matCellDef="let element" class="row-cell"> {{element.ifsc}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="created_at">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-cell"> created_at </th>
+            <td mat-cell *matCellDef="let element" class="row-cell"> {{element.created_at}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="updated_at">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-cell"> updated_at </th>
+            <td mat-cell *matCellDef="let element" class="row-cell"> {{element.updated_at}} </td>
+        </ng-container>
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef class="header-cell"> Action </th>
+            <td mat-cell *matCellDef="let element" class="action-buttons row-cell" >
+              <a mat-raised-button (click)="edit(element.id)"><mat-icon color="primary" >edit</mat-icon></a>
+              <a mat-raised-button  (click)="delete(element.id)"><mat-icon color="warn">delete</mat-icon></a>
+            </td>
+          </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+</div>

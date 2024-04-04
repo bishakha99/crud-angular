@@ -1,0 +1,76 @@
+<div class="p-8 mt-4 flex justify-center">
+<div class="shadow p-6 custom-box ">
+  @if(isEdit){
+    <h4 class="text-center">Edit Banks Details</h4>
+  } @else{
+    <h4 class="text-center">Create Banks Form</h4>
+  }
+    <form [formGroup]="BanksForm" (ngSubmit)="save()">
+        <!-- <div class="w-full flex flex-wrap">
+            <mat-form-field class="w-full">
+                <mat-label>Id</mat-label>
+                <input type="number" matInput placeholder="ID" formControlName="id"/>
+               
+                
+              </mat-form-field>
+            </div> -->
+                <div class="w-full flex flex-wrap">
+              <mat-form-field class="">
+                <mat-label>Ref_code</mat-label>
+                <input type="text" matInput placeholder="Ref_code" formControlName="ref_code"/>
+                
+                
+              </mat-form-field>
+            </div>
+            <div class="w-full flex flex-wrap">
+              <mat-form-field class="" >
+                <mat-label>Name</mat-label>
+                <input type="text" matInput placeholder="Enter Bank Name" formControlName="name"/>
+                
+                
+              </mat-form-field>
+              </div>
+              <div class="w-full flex flex-wrap">
+                <mat-form-field class="" >
+                  <mat-label>Short_name</mat-label>
+                  <input type="text" matInput placeholder="Enter Short Name" formControlName="sort_name"/>
+                  
+                  
+                </mat-form-field>
+                </div>
+              <!-- <div class="w-full flex flex-wrap">
+              <mat-form-field class="w-full">
+                <mat-label>Created_at</mat-label>
+                <input type="Date" matInput placeholder="Created_at" formControlName="created_At"/>
+              
+                
+              </mat-form-field>
+              </div> -->
+              <!-- <div class="w-full flex flex-wrap">
+              <mat-form-field class="w-full">
+                <mat-label>Updated_at</mat-label>
+                <input type="Date" matInput placeholder="Updated_at" formControlName="updated_at"/>
+                
+                
+              </mat-form-field>
+            </div> -->
+
+            <div class="flex justify-center ">
+              @if(isEdit)
+              {
+                <button mat-raised-button color="primary w-full" class="mr-2">Update</button>
+                <button mat-raised-button color="warn w-full" (click)="cancel()">Cancel</button>
+
+              }
+              @else{
+                <button mat-raised-button color="primary w-full" class="mr-2">Add</button>
+                <button mat-raised-button color="warn w-full" (click)="cancel()">Cancel</button>
+
+              }
+              </div>
+
+              </form>
+              </div>
+              </div>
+  
+

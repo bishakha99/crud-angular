@@ -1,0 +1,23 @@
+.action-buttons button {
+    margin-right: 8px; /* Adjust as needed */
+  }
+  
+  .action-buttons {
+    white-space: nowrap; /* Prevent button wrap */
+  }
+
+  /* Example CSS in your component's CSS file */
+
+
+.row-cell {
+  background-color: rgb(134, 148, 153); /* Set your desired background color */
+}
+
+.action-buttons button {
+  color: white; /* Set the font color for buttons */
+}
+mat-form-field {
+  padding-right: 20px;
+  /* width: 100px; */
+  height: 75px;
+}

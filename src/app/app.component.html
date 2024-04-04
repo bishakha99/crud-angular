@@ -1,0 +1,22 @@
+<mat-toolbar  style="background-color: black; color:white;">
+  <button routerLink="/" mat-icon-button class="mr-4">
+    <mat-icon>home </mat-icon>
+  </button>
+  <span class="mr-4"> Crud App</span>
+  <span class="example-spacer"></span>
+  <div class="flex justify-end p-8"><button routerLink="/bank-list" mat-raised-button  style="margin-right: 10px;">Banks</button>
+  <!-- <button routerLink="/bank-list" mat-icon-button class="mr-4">
+    Banks
+  </button> -->
+  <button routerLink="/branches-list" mat-raised-button  >Branches</button></div>
+  <!-- <button routerLink="/branches-list" mat-icon-button class="mr-4">
+    Branches
+  </button> -->
+
+</mat-toolbar>
+
+<div class="w-full px-36 py-8">
+  <router-outlet></router-outlet>
+  <!-- <lib-ng-toast></lib-ng-toast>
+<ng-confirm></ng-confirm> -->
+</div>
